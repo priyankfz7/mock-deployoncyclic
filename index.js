@@ -8,7 +8,7 @@ const { authMiddleware } = require("./Middlewares/authentication.middleware");
 const app = express();
 app.use(cors());
 app.get("/", (req, res) => {
-  res.send("home page");
+  res.send("home ");
 });
 app.use(express.json());
 app.use("/user", userRouter);
