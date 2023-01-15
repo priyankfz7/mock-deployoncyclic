@@ -7,14 +7,13 @@ const { authMiddleware } = require("./Middlewares/authentication.middleware");
 
 const app = express();
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send("home page");
+});
 app.use(express.json());
 app.use("/user", userRouter);
 app.use(authMiddleware);
 app.use("/todos", todoRouter);
-
-app.get("/", (req, res) => {
-  res.send("home page");
-});
 
 app.listen(8080, async () => {
   try {
